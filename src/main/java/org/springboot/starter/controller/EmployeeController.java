@@ -13,12 +13,17 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import ma.glasnost.orika.MapperFacade;
+
 @RestController
 @RequestMapping("/employee")
 public class EmployeeController {
 	
 	@Autowired
 	private EmployeeService employeeServicve;
+	
+	@Autowired
+	private MapperFacade mapper;
 	
 	@PostMapping("/create")
 	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
