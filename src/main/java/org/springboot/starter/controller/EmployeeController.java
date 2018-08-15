@@ -3,17 +3,17 @@ package org.springboot.starter.controller;
 import java.util.List;
 
 import org.springboot.starter.entity.Employee;
+import org.springboot.starter.model.EmployeeModel;
 import org.springboot.starter.service.impl.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-
-import ma.glasnost.orika.MapperFacade;
 
 @RestController
 @RequestMapping("/employee")
@@ -21,9 +21,6 @@ public class EmployeeController {
 	
 	@Autowired
 	private EmployeeService employeeServicve;
-	
-	@Autowired
-	private MapperFacade mapper;
 	
 	@PostMapping("/create")
 	public ResponseEntity<Employee> createEmployee(@RequestBody Employee employee){
@@ -40,4 +37,10 @@ public class EmployeeController {
 		return response;
 	}
 	
+	@GetMapping("/get-employees/{id}")
+	public ResponseEntity<EmployeeModel> getEmployeeList(@PathVariable("id") Integer id){
+		EmployeeModel employeeList = employeeServicve.getById(id);
+		ResponseEntity<EmployeeModel> response = new ResponseEntity<EmployeeModel>(employeeList, HttpStatus.OK);
+		return response;
+	}
 }
