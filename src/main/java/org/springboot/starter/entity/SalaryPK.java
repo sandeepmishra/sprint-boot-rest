@@ -12,7 +12,7 @@ public class SalaryPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="emp_no", insertable=false, updatable=false)
+	@Column(name="emp_no")
 	private int empNo;
 
 	@Temporal(TemporalType.DATE)

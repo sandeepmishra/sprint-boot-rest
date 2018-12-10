@@ -70,3 +70,20 @@ CREATE TABLE IF NOT EXISTS salaries(
     PRIMARY KEY (emp_no, from_date)
 );
 
+select * from employees;
+
+desc dept_manager;
+
+CREATE TABLE IF NOT EXISTS address(
+ address_id INT NOT NULL AUTO_INCREMENT, 
+ emp_no INT default NULL,
+ address_line1 varchar(200),
+ address_line2 varchar (200),
+ city INT NOT NULL,
+ state INT NOT NULL,
+ country INT NOT NULL,
+ KEY (address_id),
+ FOREIGN KEY (emp_no) REFERENCES employees (emp_no) ON DELETE CASCADE,
+ PRIMARY KEY (address_id)
+ );
+ 

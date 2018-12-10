@@ -36,25 +36,29 @@ public class Employee implements Serializable {
 	@Column(name="last_name")
 	private String lastName;
 
+	@OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST,})
+	@JoinColumn(name="emp_no")
+	private List<Address> addresses;
+	
 	//bi-directional many-to-one association to DeptEmp
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinColumn(name="emp_no")
 	private List<DeptEmp> deptEmps;
 
-	//bi-directional many-to-one association to DeptManager
-	@OneToMany
+/*//bi-directional many-to-one association to DeptManager
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinColumn(name="emp_no")
 	private List<DeptManager> deptManagers;
 
 	//bi-directional many-to-one association to Salary
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinColumn(name="emp_no")
 	private List<Salary> salaries;
 
 	//bi-directional many-to-one association to Title
-	@OneToMany
+	@OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
 	@JoinColumn(name="emp_no")
-	private List<Title> titles;
+	private List<Title> titles;*/
 
 	public Employee() {
 	}
@@ -107,6 +111,14 @@ public class Employee implements Serializable {
 		this.lastName = lastName;
 	}
 
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
+
 	public List<DeptEmp> getDeptEmps() {
 		return this.deptEmps;
 	}
@@ -115,7 +127,7 @@ public class Employee implements Serializable {
 		this.deptEmps = deptEmps;
 	}
 
-	public List<DeptManager> getDeptManagers() {
+	/*public List<DeptManager> getDeptManagers() {
 		return this.deptManagers;
 	}
 
@@ -138,7 +150,7 @@ public class Employee implements Serializable {
 
 	public void setTitles(List<Title> titles) {
 		this.titles = titles;
-	}
+	}*/
 
 	
 

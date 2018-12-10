@@ -12,10 +12,10 @@ public class DeptManagerPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="emp_no", insertable=false, updatable=false)
+	@Column(name="emp_no", nullable=false)
 	private int empNo;
 
-	@Column(name="dept_no", insertable=false, updatable=false)
+	@Column(name="dept_no", nullable=false)
 	private String deptNo;
 
 	public DeptManagerPK() {

@@ -26,8 +26,8 @@ public class DeptManager implements Serializable {
 	@Column(name="to_date")
 	private Date toDate;
 
-/*	//bi-directional many-to-one association to Employee
-	@ManyToOne
+	//bi-directional many-to-one association to Employee
+/*	@ManyToOne
 	@JoinColumn(name="emp_no")
 	private Employee employee;
 
@@ -39,6 +39,13 @@ public class DeptManager implements Serializable {
 	public DeptManager() {
 	}
 
+/*	@PrePersist
+	public void setDepartManagerPkId(){
+		id =new DeptManagerPK();
+		id.setDeptNo(department.getDeptNo());
+		id.setEmpNo(employee.getEmpNo());
+	}*/
+	
 	public DeptManagerPK getId() {
 		return this.id;
 	}
@@ -63,7 +70,7 @@ public class DeptManager implements Serializable {
 		this.toDate = toDate;
 	}
 
-/*	public Employee getEmployee() {
+	/*public Employee getEmployee() {
 		return this.employee;
 	}
 

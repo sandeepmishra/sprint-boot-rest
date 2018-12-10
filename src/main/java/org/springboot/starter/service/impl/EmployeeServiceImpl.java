@@ -21,10 +21,12 @@ public class EmployeeServiceImpl implements EmployeeService {
 	@Autowired
 	private MapperFacade mapperFacade;
 
+	
 	@Override
 	@Transactional
 	public Employee createEmployee(Employee employee) {
 		Employee emp = employeeRepository.save(employee);
+		emp.getAddresses().forEach(add->System.out.println(add.getEmpNo()));
 		return emp;
 	}
 

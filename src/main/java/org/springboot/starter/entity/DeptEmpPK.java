@@ -12,18 +12,18 @@ public class DeptEmpPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="emp_no", insertable=false, updatable=false)
-	private int empNo;
+	@Column(name="emp_no")
+	private Integer empNo;
 
-	@Column(name="dept_no", insertable=false, updatable=false)
+	@Column(name="dept_no")
 	private String deptNo;
 
 	public DeptEmpPK() {
 	}
-	public int getEmpNo() {
+	public Integer getEmpNo() {
 		return this.empNo;
 	}
-	public void setEmpNo(int empNo) {
+	public void setEmpNo(Integer empNo) {
 		this.empNo = empNo;
 	}
 	public String getDeptNo() {
