@@ -1,4 +1,4 @@
-package org.springboot.starter.entity;
+package org.springboot.starter.retail.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
@@ -36,7 +36,7 @@ public class Employee implements Serializable {
 	@Column(name="last_name")
 	private String lastName;
 
-	@OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST,})
+	@OneToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST,})//, fetch=FetchType.EAGER)
 	@JoinColumn(name="emp_no")
 	private List<Address> addresses;
 	

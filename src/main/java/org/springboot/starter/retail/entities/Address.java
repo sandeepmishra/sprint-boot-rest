@@ -1,4 +1,4 @@
-package org.springboot.starter.entity;
+package org.springboot.starter.retail.entities;
 
 import java.io.Serializable;
 
@@ -22,10 +22,10 @@ public class Address implements Serializable {
 	@Column(name = "emp_no")
 	private Integer empNo;
 
-	@Column(name = "addressLine1")
+	@Column(name = "address_Line1")
 	private String addressLine1;
 
-	@Column(name = "addressLine2")
+	@Column(name = "address_Line2")
 	private String addressLine2;
 
 	@Column(name = "city")

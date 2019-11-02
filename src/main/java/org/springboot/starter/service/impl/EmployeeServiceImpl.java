@@ -4,9 +4,9 @@ import java.util.List;
 
 import javax.transaction.Transactional;
 
-import org.springboot.starter.entity.Employee;
 import org.springboot.starter.model.EmployeeModel;
-import org.springboot.starter.repository.IEmployeeRepository;
+import org.springboot.starter.retail.entities.Employee;
+import org.springboot.starter.retail.repository.IEmployeeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

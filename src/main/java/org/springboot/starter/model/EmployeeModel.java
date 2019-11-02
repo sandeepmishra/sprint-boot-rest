@@ -4,10 +4,10 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
-import org.springboot.starter.entity.DeptEmp;
-import org.springboot.starter.entity.DeptManager;
-import org.springboot.starter.entity.Salary;
-import org.springboot.starter.entity.Title;
+import org.springboot.starter.retail.entities.DeptEmp;
+import org.springboot.starter.retail.entities.DeptManager;
+import org.springboot.starter.retail.entities.Salary;
+import org.springboot.starter.retail.entities.Title;
 
 public class EmployeeModel implements Serializable{
 

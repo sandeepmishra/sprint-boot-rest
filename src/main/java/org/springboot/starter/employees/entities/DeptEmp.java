@@ -1,4 +1,4 @@
-package org.springboot.starter.entity;
+package org.springboot.starter.employees.entities;
 
 import java.io.Serializable;
 import java.util.Date;

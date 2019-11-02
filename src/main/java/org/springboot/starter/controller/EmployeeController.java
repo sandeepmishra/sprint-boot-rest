@@ -2,10 +2,11 @@ package org.springboot.starter.controller;
 
 import java.util.List;
 
-import org.springboot.starter.entity.Employee;
 import org.springboot.starter.model.EmployeeModel;
+import org.springboot.starter.retail.entities.Employee;
 import org.springboot.starter.service.impl.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.ConversionService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -33,7 +34,7 @@ public class EmployeeController {
 	@GetMapping("/get-employees")
 	public ResponseEntity<List<Employee>> getEmployeeList(){
 		List<Employee> employeeList = employeeServicve.getEmployees();
-		ResponseEntity<List<Employee>> response = new ResponseEntity<List<Employee>>(employeeList, HttpStatus.OK);
+		ResponseEntity<List<Employee>> response = new ResponseEntity<>(employeeList, HttpStatus.OK);
 		return response;
 	}
 	

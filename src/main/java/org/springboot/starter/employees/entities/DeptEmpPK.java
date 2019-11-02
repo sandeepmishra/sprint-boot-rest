@@ -1,29 +1,29 @@
-package org.springboot.starter.entity;
+package org.springboot.starter.employees.entities;
 
 import java.io.Serializable;
 import javax.persistence.*;
 
 /**
- * The primary key class for the dept_manager database table.
+ * The primary key class for the dept_emp database table.
  * 
  */
 @Embeddable
-public class DeptManagerPK implements Serializable {
+public class DeptEmpPK implements Serializable {
 	//default serial version id, required for serializable classes.
 	private static final long serialVersionUID = 1L;
 
-	@Column(name="emp_no", nullable=false)
-	private int empNo;
+	@Column(name="emp_no")
+	private Integer empNo;
 
-	@Column(name="dept_no", nullable=false)
+	@Column(name="dept_no")
 	private String deptNo;
 
-	public DeptManagerPK() {
+	public DeptEmpPK() {
 	}
-	public int getEmpNo() {
+	public Integer getEmpNo() {
 		return this.empNo;
 	}
-	public void setEmpNo(int empNo) {
+	public void setEmpNo(Integer empNo) {
 		this.empNo = empNo;
 	}
 	public String getDeptNo() {
@@ -37,10 +37,10 @@ public class DeptManagerPK implements Serializable {
 		if (this == other) {
 			return true;
 		}
-		if (!(other instanceof DeptManagerPK)) {
+		if (!(other instanceof DeptEmpPK)) {
 			return false;
 		}
-		DeptManagerPK castOther = (DeptManagerPK)other;
+		DeptEmpPK castOther = (DeptEmpPK)other;
 		return 
 			(this.empNo == castOther.empNo)
 			&& this.deptNo.equals(castOther.deptNo);
